@@ -23,6 +23,10 @@ public class Curso {
 
     private String estado;
 
+    private double costoMensual;
+
+    private double costoCompleto;
+
     @OneToMany(mappedBy = "curso")
     private List<Horario> horarios;
 

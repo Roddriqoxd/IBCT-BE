@@ -13,6 +13,7 @@ public class PagoMapper {
         dto.setFechaPago(pago.getFechaPago());
         dto.setTipoDescuento(pago.getTipoDescuento());
         dto.setTipoPago(pago.getTipoPago());
+        dto.setCategoria(pago.getCategoria());
         dto.setDetalle(pago.getDetalle());
         dto.setInscripcionId(pago.getInscripcion() != null ? pago.getInscripcion().getId() : null);
         return dto;
@@ -23,6 +24,7 @@ public class PagoMapper {
         pago.setMonto(dto.getMonto());
         pago.setTipoDescuento(dto.getTipoDescuento());
         pago.setTipoPago(dto.getTipoPago());
+        pago.setCategoria(dto.getCategoria());
         pago.setDetalle(dto.getDetalle());
         if (dto.getInscripcionId() != null) {
             Inscripcion insc = new Inscripcion();

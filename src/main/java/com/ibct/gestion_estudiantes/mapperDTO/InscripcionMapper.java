@@ -17,6 +17,7 @@ public class InscripcionMapper {
         dto.setEstadoCertificado(insc.getEstadoCertificado());
         dto.setEstadoPago(insc.getEstadoPago());
         dto.setTipoInscripcion(insc.getTipoInscripcion());
+        dto.setObservacion(insc.getObservacion() != null ? insc.getObservacion() : null);
         dto.setEstudianteId(insc.getEstudiante() != null ? insc.getEstudiante().getId() : null);
         dto.setCursoId(insc.getCurso() != null ? insc.getCurso().getId() : null);
         dto.setHorarioId(insc.getHorario() != null ? insc.getHorario().getId() : null);
@@ -31,6 +32,10 @@ public class InscripcionMapper {
         insc.setEstadoPago(dto.getEstadoPago());
         insc.setEstadoCertificado(dto.getEstadoCertificado());
         insc.setTipoInscripcion(dto.getTipoInscripcion());
+
+        if (dto.getObservacion() != null) {
+            insc.setObservacion(dto.getObservacion());
+        }
 
         if (dto.getEstudianteId() != null) {
             Estudiante est = new Estudiante();

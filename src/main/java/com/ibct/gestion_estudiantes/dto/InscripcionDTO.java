@@ -15,6 +15,7 @@ public class InscripcionDTO {
     private String tipoInscripcion;
     private String estadoPago;
     private String estadoCertificado;
+    private String Observacion;
     private Long estudianteId;
     private Long horarioId;
     private Long cursoId;

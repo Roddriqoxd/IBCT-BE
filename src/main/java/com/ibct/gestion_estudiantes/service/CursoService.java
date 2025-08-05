@@ -36,6 +36,8 @@ public class CursoService {
             dto.setModalidad(curso.getModalidad());
             dto.setDuracionMeses(curso.getDuracionMeses());
             dto.setEstado(curso.getEstado());
+            dto.setCostoMensual(curso.getCostoMensual());
+            dto.setCostoCompleto(curso.getCostoCompleto());
 
             List<HorarioResponseDTO> horarioDTOs = curso.getHorarios().stream().map(horario -> {
                 HorarioResponseDTO hDto = new HorarioResponseDTO();

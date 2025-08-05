@@ -21,6 +21,7 @@ public class InscripcionResponseDTO {
     private EstudianteDTO estudiante;
     private String estadoPago;
     private String tipoInscripcion;
+    private String Observacion;
     private HorarioDTO horario;
     private CursoDTO curso;
     private List<PagoDTO> pagos;

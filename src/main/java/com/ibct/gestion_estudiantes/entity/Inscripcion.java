@@ -29,6 +29,9 @@ public class Inscripcion {
 
     private String estadoCertificado;
 
+    @Column(length = 1000, nullable = true)
+    private String Observacion;
+
     @ManyToOne
     @JoinColumn(name = "estudiante_id")
     private Estudiante estudiante;

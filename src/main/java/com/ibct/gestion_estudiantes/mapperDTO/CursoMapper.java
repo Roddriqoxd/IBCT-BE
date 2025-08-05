@@ -11,6 +11,8 @@ public class CursoMapper {
         dto.setNombre(curso.getNombre());
         dto.setDuracionMeses(curso.getDuracionMeses());
         dto.setModalidad(curso.getModalidad());
+        dto.setCostoMensual(curso.getCostoMensual());
+        dto.setCostoCompleto(curso.getCostoCompleto());
         dto.setEstado(curso.getEstado());
         return dto;
     }
@@ -19,6 +21,8 @@ public class CursoMapper {
         Curso curso = new Curso();
         curso.setNombre(dto.getNombre());
         curso.setDuracionMeses(dto.getDuracionMeses());
+        curso.setCostoMensual(dto.getCostoMensual());
+        curso.setCostoCompleto(dto.getCostoCompleto());
         curso.setModalidad(dto.getModalidad());
         curso.setEstado(dto.getEstado());
         return curso;

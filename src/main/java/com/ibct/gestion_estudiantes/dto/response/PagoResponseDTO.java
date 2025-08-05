@@ -15,6 +15,7 @@ public class PagoResponseDTO {
     private Date fechaPago;
     private String tipoPago;
     private String tipoDescuento;
+    private String categoria;
     private String detalle;
     private InscripcionDTO inscripcion;
 }

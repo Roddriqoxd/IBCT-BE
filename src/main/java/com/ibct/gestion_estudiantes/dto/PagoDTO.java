@@ -12,6 +12,7 @@ public class PagoDTO {
     private double monto;
     private Date fechaPago;
     private String tipoPago;
+    private String categoria;
     private String tipoDescuento;
     private String detalle;
     private Long inscripcionId;

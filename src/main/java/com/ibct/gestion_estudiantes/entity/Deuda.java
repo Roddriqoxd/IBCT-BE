@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-public class Pago {
+public class Deuda {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,14 +17,9 @@ public class Pago {
 
     private double monto;
 
-    @Temporal(TemporalType.DATE)
-    private Date fechaPago;
+    private String fechaPago;
 
-    private String tipoPago;
-
-    private String tipoDescuento;
-
-    private String categoria;
+    private String estadoDePago;
 
     @Column(length = 1000, nullable = true)
     private String detalle;
@@ -32,9 +27,4 @@ public class Pago {
     @ManyToOne
     @JoinColumn(name = "inscripcion_id", nullable = true)
     private Inscripcion inscripcion;
-
-    @PrePersist
-    protected void onCreate() {
-        this.fechaPago = new Date();
-    }
 }
