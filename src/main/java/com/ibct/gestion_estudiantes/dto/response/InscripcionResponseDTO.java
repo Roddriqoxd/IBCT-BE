@@ -4,6 +4,7 @@ import com.ibct.gestion_estudiantes.dto.CursoDTO;
 import com.ibct.gestion_estudiantes.dto.EstudianteDTO;
 import com.ibct.gestion_estudiantes.dto.HorarioDTO;
 import com.ibct.gestion_estudiantes.dto.PagoDTO;
+import com.ibct.gestion_estudiantes.entity.Deuda;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,4 +26,5 @@ public class InscripcionResponseDTO {
     private HorarioDTO horario;
     private CursoDTO curso;
     private List<PagoDTO> pagos;
+    private List<DeudaResponseDTO> deudas;
 }

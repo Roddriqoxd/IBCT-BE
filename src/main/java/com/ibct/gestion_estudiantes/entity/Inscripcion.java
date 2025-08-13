@@ -48,5 +48,8 @@ public class Inscripcion {
     private List<Pago> pagos;
 
     @OneToMany(mappedBy = "inscripcion")
-    private List<Nota> notas;
+    private List<Deuda> deudas;
+
+//    @OneToMany(mappedBy = "inscripcion")
+//    private List<Nota> notas;
 }

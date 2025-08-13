@@ -4,12 +4,10 @@ import com.ibct.gestion_estudiantes.dto.CursoDTO;
 import com.ibct.gestion_estudiantes.dto.EstudianteDTO;
 import com.ibct.gestion_estudiantes.dto.HorarioDTO;
 import com.ibct.gestion_estudiantes.dto.PagoDTO;
+import com.ibct.gestion_estudiantes.dto.response.DeudaResponseDTO;
 import com.ibct.gestion_estudiantes.dto.response.InscripcionResponseDTO;
 import com.ibct.gestion_estudiantes.entity.*;
-import com.ibct.gestion_estudiantes.mapperDTO.CursoMapper;
-import com.ibct.gestion_estudiantes.mapperDTO.EstudianteMapper;
-import com.ibct.gestion_estudiantes.mapperDTO.HorarioMapper;
-import com.ibct.gestion_estudiantes.mapperDTO.PagoMapper;
+import com.ibct.gestion_estudiantes.mapperDTO.*;
 import com.ibct.gestion_estudiantes.repository.InscripcionRepository;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +39,7 @@ public class InscripcionService {
             dto.setEstadoCertificado(inscrito.getEstadoCertificado());
             dto.setTipoInscripcion(inscrito.getTipoInscripcion());
             dto.setEstadoPago(inscrito.getEstadoPago());
+//            dto.setDeudas(inscrito.getDeudas());
 
             Estudiante estudiante = inscrito.getEstudiante();
             EstudianteDTO estudianteDTO = EstudianteMapper.toDto(estudiante);
@@ -56,7 +55,13 @@ public class InscripcionService {
                     .stream()
                     .map(PagoMapper::toDto).collect(Collectors.toList());
 
+            List<Deuda> deudas = inscrito.getDeudas();
+            List<DeudaResponseDTO> deudasDTO = deudas
+                    .stream()
+                    .map(DeudaMapper::toDto).collect(Collectors.toList());
+
             dto.setPagos(pagoDTO);
+            dto.setDeudas(deudasDTO);
             dto.setEstudiante(estudianteDTO);
             dto.setHorario(horarioDTO);
             dto.setCurso(cursoDTO);
